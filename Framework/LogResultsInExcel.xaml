@@ -1,0 +1,346 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="gateLinkText" Type="InOutArgument(x:String)" />
+    <x:Property Name="gdoImageExists" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="gdoLinkText" Type="InOutArgument(x:String)" />
+    <x:Property Name="myqImageExists" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="myqLinkText" Type="InOutArgument(x:String)" />
+    <x:Property Name="programmingLinkText" Type="InOutArgument(x:String)" />
+    <x:Property Name="gateImageExists" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="howToVideosExecFlag" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="noOfVideos" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="howToVideoGalleryExists" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="programmingPageExecFlag" Type="InOutArgument(x:Boolean)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>988,4578</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="948,4498" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If sap:VirtualizedContainerService.HintSize="910,1252" sap2010:WorkflowViewState.IdRef="If_8">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">howToVideosExecFlag</mca:CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="769,1104" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="C:\Users\saman\OneDrive\Desktop\SmokeObservations.xlsx">
+          <ui:ExcelApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="739,995" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="noOfVideosExpected" />
+                  <Variable x:TypeArguments="x:String" Name="noOfVideosToString" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="701,403" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254,325" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExcelWriteCell Cell="C4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="216,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_28" SheetName="Sheet1">
+                        <ui:ExcelWriteCell.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">noOfVideos</mca:CSharpValue>
+                          </InArgument>
+                        </ui:ExcelWriteCell.Text>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ExcelWriteCell>
+                      <ui:ExcelReadCell Cell="B4" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="216,51" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Sheet1">
+                        <ui:ExcelReadCell.Result>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">noOfVideosExpected</mca:CSharpReference>
+                          </OutArgument>
+                        </ui:ExcelReadCell.Result>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ExcelReadCell>
+                      <If sap:VirtualizedContainerService.HintSize="216,51" sap2010:WorkflowViewState.IdRef="If_10">
+                        <If.Condition>
+                          <InArgument x:TypeArguments="x:Boolean">
+                            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">noOfVideos.ToString().Equals(noOfVideosExpected)</mca:CSharpValue>
+                          </InArgument>
+                        </If.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:ExcelWriteCell Cell="D4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_23" SheetName="Sheet1" Text="PASS" />
+                        </If.Then>
+                        <If.Else>
+                          <ui:ExcelWriteCell Cell="D4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_24" SheetName="Sheet1" Text="FAIL" />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="701,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" TopMost="True">
+                  <ui:MessageBox.Text>
+                    <InArgument x:TypeArguments="x:Object">
+                      <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">howToVideoGalleryExists</mca:CSharpValue>
+                    </InArgument>
+                  </ui:MessageBox.Text>
+                </ui:MessageBox>
+                <ui:ExcelWriteCell Cell="C3" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_25" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">howToVideoGalleryExists.ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_11">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">howToVideoGalleryExists</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D3" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_26" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D3" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_27" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ui:ExcelApplicationScope.Body>
+        </ui:ExcelApplicationScope>
+      </If.Then>
+    </If>
+    <If sap:VirtualizedContainerService.HintSize="910,3114" sap2010:WorkflowViewState.IdRef="If_9">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">programmingPageExecFlag</mca:CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="769,2968" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="C:/Users/saman/OneDrive/Desktop/SmokeObservations.xlsx">
+          <ui:ExcelApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="739,2859" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExcelWriteCell Cell="C5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">programmingLinkText</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">programmingLinkText.Equals("Programming")</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">gdoImageExists.ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">gdoImageExists</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">gdoLinkText</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">gdoLinkText.Equals("GARAGE DOOR OPENER")</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">gateImageExists.ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">gateImageExists</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">gateLinkText</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">gateLinkText.Equals("GATE")</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D9" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">myqImageExists.ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">myqImageExists</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_17" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_18" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+                <ui:ExcelWriteCell Cell="C11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="701,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_19" SheetName="Sheet1">
+                  <ui:ExcelWriteCell.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">myqLinkText</mca:CSharpValue>
+                    </InArgument>
+                  </ui:ExcelWriteCell.Text>
+                </ui:ExcelWriteCell>
+                <If sap:VirtualizedContainerService.HintSize="701,234" sap2010:WorkflowViewState.IdRef="If_7">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">myqLinkText.Equals("MyQ LIGHTING")</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <ui:ExcelWriteCell Cell="D11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_20" SheetName="Sheet1" Text="PASS" />
+                  </If.Then>
+                  <If.Else>
+                    <ui:ExcelWriteCell Cell="D11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="330,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_21" SheetName="Sheet1" Text="FAIL" />
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ui:ExcelApplicationScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ExcelApplicationScope>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>
